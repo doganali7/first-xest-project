@@ -7,6 +7,7 @@ const authentication = require("./middlewares/authentication");
 const authorise = require("./middlewares/authorisation");
 const getUserTypes = require("./controllers/users/userTypes");
 const { ADMIN } = require("~root/constants/userTypes");
+const getArtists = require("./controllers/artists/getArtists");
 
 const router = express.Router();
 
@@ -21,5 +22,6 @@ router.post(
 router.put("/edit/user", authentication, putUserDetails);
 
 router.get("/user-types", getUserTypes);
+router.get("/artists", getArtists);
 
 module.exports = router;
